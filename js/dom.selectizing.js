@@ -77,7 +77,7 @@
 			    var item = listItems[listItem];
 
 		    	var liOption = document.createElement('li');
-		    		liOption.value = item.value;
+		    		liOption.dataset.val = item.value;
 		    		if(item.selected) liOption.classList.add('selected');
 		    		if(item.value == settings.valueHidden) liOption.classList.add('hidden');
 					else {numVisibleOptions += 1; $(liOption).attr('data-element', numVisibleOptions);}
@@ -155,7 +155,7 @@
 
 			// handle choose option
 			$listOptions.click(function(e){
-				var value = $(this).val(),
+				var value = $(this).data('val'),
 					title = $(this).text();
 
 				if( $(this).hasClass('selected') ){
